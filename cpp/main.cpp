@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <cstring>
 #include "dancingrobot.hpp"
 
 int main(int argc, char* argv[]) {
