@@ -5,18 +5,17 @@
 
 int main(int argc, char* argv[]) {
 	std::cout << "let's dance!\n";
-	char* input;
+	// char** default_argv = malloc(2 * sizeof *default_argv);
+	char** default_argv = new char*[2];
+	default_argv[0] = argv[0];
+	default_argv[1] = (char*)"0";
 	if (argc < 2) {
 		std::cout << "missing input argument postion\n";
-	//	input = "0".c_str();
-	        const char* d = "0";
-	        strcpy(input, d);
+		argv = default_argv;
 	}
-	else {
-		input = argv[1];
-	}
-	int step = strtol(input, NULL, 10);
+	int step = strtol(argv[1], NULL, 10);
 	int position = FindDancePosition(step);
 	std::cout << "Dance position:" << position <<"\n";
+	delete [] default_argv;
 	return 0;
 }
