@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v1
       - name: build cpp
         working-directory: ./cpp
-        run: make
+        run: make test && make
