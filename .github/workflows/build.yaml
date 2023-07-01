@@ -9,6 +9,9 @@ jobs:
     
     steps:
       - uses: actions/checkout@v1
+      - name: test cpp
+        working-directory: ./cpp
+        run: make test
       - name: build cpp
         working-directory: ./cpp
-        run: make test && make
+        run: make
