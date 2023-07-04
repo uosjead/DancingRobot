@@ -5,7 +5,6 @@
 
 int main(int argc, char* argv[]) {
 	std::cout << "let's dance!\n";
-	// char** default_argv = malloc(2 * sizeof *default_argv);
 	char** default_argv = new char*[2];
 	default_argv[0] = argv[0];
 	default_argv[1] = (char*)"0";
