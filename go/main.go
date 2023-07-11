@@ -10,11 +10,17 @@ import (
 )
 
 func main() {
-	parser := argparse.NewParser("print", "Prints provided string to stdout")
-	position := parser.IntPositional(&argparse.Options{Required: true})
+	parser := argparse.NewParser(
+		"dancingrobot",
+		"A robot takes one step forward. Then two steps back.\n" +
+		"Then every step after he steps forward the difference between the change in the previous two steps.",
+	)
+	position := parser.IntPositional(&argparse.Options{Required: true, Help: "position of robot"})
 	err := parser.Parse(os.Args)
-	if err != nil {
+	if err == nil {
+		logic.Do(position)
+	} else {
 		fmt.Print(parser.Usage(err))
 	}
-    logic.Do(position)
+
 }
