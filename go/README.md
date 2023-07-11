@@ -2,5 +2,6 @@
 
 ## setup
 
+go install .
 
-export GOPATH=$(pwd)
+$(go env GOPATH)/bin/DancingRobot
